@@ -2,7 +2,9 @@
   "client_key": "",
   "secret_key": "",
   "monnaie": "BTC",
-  "mise_total": "all",
+  "mise_total": 0.0001,
   "seconde": 5,
-  "multiplicateur": 1.10
+  "multiplicateur": 1.10,
+  "token_client": "ODMyMDE0MDY4MjczMjUwMzE1.YHdpoA.NLsQImzWgupU_XZLLChMlb5SGAI",
+  "id_channel": "718529308959703100"
 }
