@@ -3,6 +3,7 @@ import json
 import sys
 from binance.enums import *
 import time
+from scrapping import scrap
 
 with open('config.json') as json_file:
   config = json.load(json_file)
@@ -13,6 +14,8 @@ devise = config["monnaie"]
 temps = config["seconde"]
 mise = config["mise_total"]
 target0 = config["multiplicateur"]
+id_client = config["token_client"]
+id_channel = config["id_channel"]
 client = Client(clientkey, secretkey)
 
 
@@ -72,10 +75,11 @@ if client.ping() == {}:  # on ping le server
 	print('Ready')
 else:
   sys.exit()
-
 stop = input('')
 if stop == 'quit':
   sys.exit()
+elif stop == 'auto':
+	stop = scrap(id_channel, id_client)
 name = str(stop.upper() + devise)
 
 nbr = mise / valeur(stop)
@@ -156,4 +160,4 @@ time.sleep(2)
 print(devise, 'dispo :', client.get_asset_balance(asset=devise)['free'])  # dollars dispo
 dispo2 = client.get_asset_balance(asset=devise)['free']
 print('benef sur le pump : x',float(dispo2)/float(dispo1))
-#fin = input('')
+fin = input('')
