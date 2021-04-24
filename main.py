@@ -31,7 +31,7 @@ def decimal_str(x: float, decimals: int = 10) -> str:
 def arrondir(targetfloat):
   oui = decimal_str(targetfloat)
   if targetfloat >=1 :
-    targetf = round(prix_limit, 2)
+    targetf = round(targetfloat, 2)
     return str(targetf)
   else :
     c=0;f=0;go=True
